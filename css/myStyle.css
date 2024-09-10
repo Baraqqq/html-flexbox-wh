@@ -1,34 +1,74 @@
+body {
+    margin: 0;
+}
+header {
+    display: flex;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(235, 135, 135);
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+header .menu a{
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+header .menu a:hover{
+    text-decoration: underline;
+}
+footer {
+    display: flex;
+    height: 60px;
+    background-color: rgb(235, 135, 135);
+    color: white;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    margin-top: 10px;
+}
+footer div{
+    margin: 0 10px;
+}
+footer .breadcrumbs a{
+    color: white;
+    text-decoration: none;
+}
+footer .breadcrumbs a:hover{
+    text-decoration: underline;
+}
 .container {
     display: flex;
-    height: 100vh;
-
+    min-height: calc(100vh - 160px);
+    margin-top: 10px; 
     gap: 25px;
     flex-direction: row;
     justify-content: space-around;
     align-content: space-around;
+    align-items: stretch;
 }
 
-.sidebar-l {
-    width: 280px;
-    height: 360px;
-    background-color: skyblue;
-    border: 2px solid black;
-
+.sidebar-l, .sidebar-r {
+    flex-basis: 200px;
+    flex-shrink: 0;
+    background-color: rgb(235, 135, 135);
+    flex-direction: column;
     display: flex;
     flex-grow: 1;
-    align-self: flex-start;
+    padding: 10px;
 }
 
 .content {
-    width: 280px;
-    height: 360px;
+    flex-grow: 3    ;
     background-color: skyblue;
-    border: 2px solid black;
-
+    flex-direction: column;
     display: flex;
-    flex-grow: 4;
+    padding: 10px;
 }
-.sidebar-r {
+/* .sidebar-r {
     width: 280px;
     height: 360px;
     background-color: skyblue;
@@ -37,4 +77,4 @@
     display: flex;
 
     flex-grow: 2;
-}
+} */
