@@ -1,26 +1,73 @@
-body {
-    margin: 0;
+html, body {
+    margin: 0; /* Verwijder standaardmarges van het html- en body-element */
+    padding: 0; /* Verwijder standaardpadding van het html- en body-element */
+    width: 100%; /* Zorg ervoor dat het html- en body-element de volledige breedte innemen */
+    height: 100%; /* Zorg ervoor dat het html- en body-element de volledige hoogte innemen */
+    box-sizing: border-box; /* Zorg ervoor dat padding wordt meegerekend in de breedte */
 }
+
+.container {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px; /* Definieer de kolommen voor de grid */
+    grid-template-rows: auto 1fr auto; /* Definieer de rijen voor de grid */
+    gap: 10px; /* Voeg ruimte toe tussen de grid-items */
+    width: 100%; /* Zorg ervoor dat de container de volledige breedte inneemt */
+    height: 100%; /* Zorg ervoor dat de container de volledige hoogte inneemt */
+    margin: 0; /* Verwijder marges van de container */
+    box-sizing: border-box; /* Zorg ervoor dat padding wordt meegerekend in de breedte */
+}
+
 header {
+    grid-column: 1 / span 3; /* Laat de header de volledige breedte van de grid innemen */
     display: flex;
     height: 60px;
-    width: 100%;
     background-color: rgb(235, 135, 135);
     color: white;
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Zorg ervoor dat padding wordt meegerekend in de breedte */
 }
-header .menu a{
+
+header .menu a {
     color: white;
     text-decoration: none;
     margin: 0 10px;
 }
-header .menu a:hover{
+
+header .menu a:hover {
     text-decoration: underline;
 }
+
+.sidebar-l {
+    grid-column: 1; /* Plaats de linker sidebar in de eerste kolom */
+    grid-row: 2; /* Plaats de linker sidebar in de tweede rij */
+    background-color: rgb(235, 135, 135);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.content {
+    grid-column: 2; /* Plaats de content in de tweede kolom */
+    grid-row: 2; /* Plaats de content in de tweede rij */
+    background-color: skyblue;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.sidebar-r {
+    grid-column: 3; /* Plaats de rechter sidebar in de derde kolom */
+    grid-row: 2; /* Plaats de rechter sidebar in de tweede rij */
+    background-color: rgb(235, 135, 135);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
 footer {
+    grid-column: 1 / span 3; /* Laat de footer de volledige breedte van de grid innemen */
     display: flex;
     height: 60px;
     background-color: rgb(235, 135, 135);
@@ -28,53 +75,18 @@ footer {
     align-items: center;
     justify-content: center;
     padding: 0 20px;
-    margin-top: 10px;
+    box-sizing: border-box; /* Zorg ervoor dat padding wordt meegerekend in de breedte */
 }
-footer div{
+
+footer div {
     margin: 0 10px;
 }
-footer .breadcrumbs a{
+
+footer .breadcrumbs a {
     color: white;
     text-decoration: none;
 }
-footer .breadcrumbs a:hover{
+
+footer .breadcrumbs a:hover {
     text-decoration: underline;
 }
-.container {
-    display: flex;
-    min-height: calc(100vh - 160px);
-    margin-top: 10px; 
-    gap: 25px;
-    flex-direction: row;
-    justify-content: space-around;
-    align-content: space-around;
-    align-items: stretch;
-}
-
-.sidebar-l, .sidebar-r {
-    flex-basis: 200px;
-    flex-shrink: 0;
-    background-color: rgb(235, 135, 135);
-    flex-direction: column;
-    display: flex;
-    flex-grow: 1;
-    padding: 10px;
-}
-
-.content {
-    flex-grow: 3    ;
-    background-color: skyblue;
-    flex-direction: column;
-    display: flex;
-    padding: 10px;
-}
-/* .sidebar-r {
-    width: 280px;
-    height: 360px;
-    background-color: skyblue;
-    border: 2px solid black;
-
-    display: flex;
-
-    flex-grow: 2;
-} */
